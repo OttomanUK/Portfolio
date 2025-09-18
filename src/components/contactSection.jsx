@@ -1,28 +1,8 @@
 "use client"
 
-import { useState } from "react"
 import { Github, Linkedin, Mail, MapPin } from "lucide-react"
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    alert("Message sent! (This is a demo)")
-  }
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
-
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -35,13 +15,13 @@ export function ContactSection() {
           <div className="pixel-border retro-shadow bg-card p-6 rounded-lg">
             <h3 className="font-mono text-xl text-accent mb-4">GET_IN_TOUCH</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
-            Lets connect and see if I can contribute to your project.
+              Lets connect and see if I can contribute to your project.
             </p>
 
             <div className="space-y-4 mb-6">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary" />
-                <span className="font-mono">uksiddiqui99@gmail..com</span>
+                <span className="font-mono">uksiddiqui99@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-primary" />
@@ -78,11 +58,19 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Netlify Contact Form */}
           <div className="pixel-border retro-shadow bg-card p-6 rounded-lg">
             <h3 className="font-mono text-xl text-accent mb-4">SEND_MESSAGE</h3>
-            <form name="contact" method="POST" data-netlify="true" className="space-y-4">
-            <input type="hidden" name="form-name" value="contact"/>
+
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              className="space-y-4"
+            >
+              {/* Required hidden input */}
+              <input type="hidden" name="form-name" value="contact" />
+
               <div>
                 <label className="font-mono text-sm mb-2 block text-primary">
                   NAME:
@@ -90,8 +78,6 @@ export function ContactSection() {
                 <input
                   type="text"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   className="w-full pixel-border font-mono p-2 rounded bg-background"
                   required
                 />
@@ -104,8 +90,6 @@ export function ContactSection() {
                 <input
                   type="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   className="w-full pixel-border font-mono p-2 rounded bg-background"
                   required
                 />
@@ -117,8 +101,6 @@ export function ContactSection() {
                 </label>
                 <textarea
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   className="w-full pixel-border font-mono p-2 rounded bg-background min-h-[120px]"
                   required
                 />

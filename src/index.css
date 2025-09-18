@@ -124,7 +124,11 @@
   body {
     @apply bg-background text-foreground;
     /* Added Matrix-style background pattern */
-    background-image: radial-gradient(circle at 1px 1px, rgba(0, 255, 65, 0.1) 1px, transparent 0);
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(0, 255, 65, 0.1) 1px,
+      transparent 0
+    );
     background-size: 20px 20px;
   }
 }
@@ -144,10 +148,11 @@
 @keyframes matrixGlow {
   0%,
   100% {
-    text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41, 0 0 15px #00ff41;
+    text-shadow: 0 0 3px rgba(0, 255, 65, 0.6), 0 0 6px rgba(0, 255, 65, 0.4);
   }
   50% {
-    text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41, 0 0 40px #00ff41;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.7), 0 0 12px rgba(0, 255, 65, 0.5),
+      0 0 18px rgba(0, 255, 65, 0.3);
   }
 }
 
@@ -212,10 +217,12 @@
 @keyframes matrixPulse {
   0%,
   100% {
-    box-shadow: 0 0 5px rgba(0, 255, 65, 0.5), inset 0 0 5px rgba(0, 255, 65, 0.1);
+    box-shadow: 0 0 5px rgba(0, 255, 65, 0.5),
+      inset 0 0 5px rgba(0, 255, 65, 0.1);
   }
   50% {
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.8), inset 0 0 10px rgba(0, 255, 65, 0.3);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.8),
+      inset 0 0 10px rgba(0, 255, 65, 0.3);
   }
 }
 
@@ -317,7 +324,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 65, 0.03) 50%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 255, 65, 0.03) 50%,
+    transparent 100%
+  );
   animation: digitalScan 4s ease-in-out infinite;
   pointer-events: none;
   z-index: 1;
@@ -330,7 +342,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 255, 65, 0.02) 50%, transparent 100%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 255, 65, 0.02) 50%,
+    transparent 100%
+  );
   animation: digitalScan 6s ease-in-out infinite reverse;
   pointer-events: none;
   z-index: 1;
@@ -350,7 +367,12 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 65, 0.2),
+    transparent
+  );
   transition: left 0.5s;
 }
 
@@ -398,9 +420,11 @@
 .neon-border {
   border: 2px solid #00ff41;
   border-radius: 4px;
-  box-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41, 0 0 15px #00ff41, inset 0 0 5px rgba(0, 255, 65, 0.1);
+  box-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41, 0 0 15px #00ff41,
+    inset 0 0 5px rgba(0, 255, 65, 0.1);
 }
 
 .neon-border:hover {
-  box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41, inset 0 0 10px rgba(0, 255, 65, 0.2);
+  box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41,
+    inset 0 0 10px rgba(0, 255, 65, 0.2);
 }
