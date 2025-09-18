@@ -1,11 +1,25 @@
-"use client"
+"use client";
 
-import { Github, Linkedin, Mail, MapPin } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 
 export function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
+        {/* Hidden form for Netlify detection - IMPORTANT for React/Next.js */}
+        <form
+          name="contact"
+          netlify
+          netlify-honeypot="bot-field"
+          hidden
+          style={{ display: 'none' }}
+        >
+          <input type="text" name="name" />
+          <input type="email" name="email" />
+          <input type="text" name="subject" />
+          <textarea name="message"></textarea>
+        </form>
+
         <h2 className="text-4xl md:text-5xl font-bold font-mono text-center mb-12 text-primary">
           {"> CONTACT_ME"}
         </h2>
@@ -58,18 +72,26 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Netlify Contact Form */}
+          {/* Actual Contact Form */}
           <div className="pixel-border retro-shadow bg-card p-6 rounded-lg">
             <h3 className="font-mono text-xl text-accent mb-4">SEND_MESSAGE</h3>
 
             <form
               name="contact"
               method="POST"
-              data-netlify="true"
+              action="/success"
               className="space-y-4"
             >
-              {/* Required hidden input */}
+              {/* Required for Netlify */}
               <input type="hidden" name="form-name" value="contact" />
+              
+              {/* Honeypot for spam protection */}
+              <p className="hidden">
+                <label>
+                  Don't fill this out if you're human: 
+                  <input name="bot-field" />
+                </label>
+              </p>
 
               <div>
                 <label className="font-mono text-sm mb-2 block text-primary">
@@ -78,6 +100,7 @@ export function ContactSection() {
                 <input
                   type="text"
                   name="name"
+                  placeholder="Your name"
                   className="w-full pixel-border font-mono p-2 rounded bg-background"
                   required
                 />
@@ -90,8 +113,21 @@ export function ContactSection() {
                 <input
                   type="email"
                   name="email"
+                  placeholder="your.email@example.com"
                   className="w-full pixel-border font-mono p-2 rounded bg-background"
                   required
+                />
+              </div>
+
+              <div>
+                <label className="font-mono text-sm text-primary mb-2 block">
+                  SUBJECT:
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="What's this about?"
+                  className="w-full pixel-border font-mono p-2 rounded bg-background"
                 />
               </div>
 
@@ -101,6 +137,7 @@ export function ContactSection() {
                 </label>
                 <textarea
                   name="message"
+                  placeholder="Tell me about your project or just say hello!"
                   className="w-full pixel-border font-mono p-2 rounded bg-background min-h-[120px]"
                   required
                 />
@@ -124,5 +161,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
