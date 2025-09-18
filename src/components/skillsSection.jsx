@@ -15,11 +15,10 @@ const skillCategories = [
   {
     title: "FRONTEND",
     skills: [
-      { name: "React", level: 90 },
-      { name: "TypeScript", level: 85 },
-      { name: "Next.js", level: 80 },
-      { name: "Tailwind CSS", level: 95 },
-      { name: "JavaScript", level: 90 },
+      { name: "Reactjs", level: 80 },
+      { name: "Next.js", level: 60 },
+      { name: "Tailwind CSS", level: 80 },
+      { name: "ShadCN UI", level: 80 },
     ],
   },
   {
@@ -83,9 +82,6 @@ export function SkillsSection() {
             <span className="animate-pulse">&gt;</span> SKILL_TREE
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent mx-auto mt-4 animate-pulse" />
-          <p className="text-green-300 font-mono mt-4 text-lg">
-            Technical expertise and proficiency levels
-          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">

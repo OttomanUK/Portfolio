@@ -1,7 +1,8 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail} from "lucide-react";
 import { useEffect, useState } from "react";
+import Resume from '../constants/Usman Khalid - Software Engineer - Resume.pdf'
 
 export function HeroSection() {
   const [displayText, setDisplayText] = useState("");
@@ -23,6 +24,15 @@ export function HeroSection() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const downloadResume = () => {
+    const link = document.createElement("a");
+    link.href = Resume;
+    link.download = "Usman Khalid - Software Engineer - Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -85,6 +95,12 @@ export function HeroSection() {
               {">"} VIEW_PROJECTS
             </button>
             <button
+              onClick={downloadResume}
+              className="font-mono text-lg px-8 py-3 neon-border matrix-hover hover:translate-x-1 hover:translate-y-1 transition-all duration-300 relative overflow-hidden bg-accent/10 hover:bg-accent/20"
+            >
+              {"> DOWNLOAD_RESUME"}
+            </button>
+            <button
               onClick={() => scrollToSection("contact")}
               className="font-mono text-lg px-8 py-3 border-2 border-green-500 text-green-400 transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
             >
@@ -111,11 +127,12 @@ export function HeroSection() {
               <Linkedin className="h-6 w-6" />
             </a>
             <a
-              href="mailto:alex@example.com"
+              href="mailto:uksiddiqui99@gmail.com.com"
               className="p-2 hover:text-green-400"
             >
               <Mail className="h-6 w-6" />
             </a>
+
           </div>
         </div>
       </div>

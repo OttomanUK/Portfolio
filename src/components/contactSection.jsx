@@ -125,17 +125,6 @@ export function ContactSection() {
                   </a>
                 </div>
               </div>
-
-              {/* Status indicators */}
-              <div className="flex justify-end mt-4 space-x-2">
-                {[...Array(3)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-2 h-2 bg-[#00ff41]/50 rounded-full animate-pulse"
-                    style={{ animationDelay: `${i * 200}ms` }}
-                  />
-                ))}
-              </div>
             </div>
 
             {/* Floating code fragment */}

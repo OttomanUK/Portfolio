@@ -1,6 +1,10 @@
 "use client";
 
 import { Github, ExternalLink } from "lucide-react";
+import anomaly from '../constants/anomaly.png'
+import job from '../constants/job.jpg'
+import finance from '../constants/finance.png'
+import ecommerce from '../constants/ecommerce.png'
 
 const projects = [
   {
@@ -8,18 +12,18 @@ const projects = [
     description:
       "Responsive web application built with React and Redux, featuring interactive dashboards, API integration, and anomaly detection for invoice management.",
     tech: ["React", "PostgreSQL", "Python", "Django"],
-    image: "/ecommerce-website-mockup.png",
-    github: "https://github.com",
-    demo: "https://demo.com",
+    image: anomaly,
+    github: "https://github.com/OttomanUK/srb-frontend",
+    // demo: "https://demo.com",
   },
   {
     title: "Job Portal",
     description:
       "Full-stack job portal built with MERN, TailwindCSS, and ShadCN UI, featuring recruiter/job seeker roles, resume uploads, and RESTful APIs for job applications.",
     tech: ["MERN", "TailwindCSS", "ShadCN UI"],
-    image: "/task-management-dashboard.png",
-    github: "https://github.com",
-    demo: "https://demo.com",
+    image: job,
+    github: "https://github.com/OttomanUK/Job-Portal-Backend",
+    // demo: "https://demo.com",
   },
   {
     title: "Personal Finance Tracker",
@@ -33,18 +37,18 @@ const projects = [
       "TailwindCSS",
       "ShadCN UI",
     ],
-    image: "/weather-api-dashboard.jpg",
-    github: "https://github.com",
-    demo: "https://demo.com",
+    image: finance,
+    github: "https://github.com/OttomanUK/finance-tracker-app-backend",
+    // demo: "https://demo.com",
   },
   {
     title: "E-Commerce Store",
     description:
       "E-commerce platform built with MERN, TailwindCSS, and ShadCN UI, supporting vendor/customer roles, catalog and cart workflows, and secure authentication with file uploads.",
     tech: ["MERN", "Tailwind CSS", "ShadCN UI"],
-    image: "/fitness-app-interface.png",
-    github: "https://github.com",
-    demo: "https://demo.com",
+    image: ecommerce,
+    github: "https://github.com/OttomanUK/Clothing-Store-Frontend",
+    // demo: "https://demo.com",
   },
 ];
 
@@ -69,7 +73,7 @@ export function ProjectsSection() {
                 {/* Dot marker for each project */}
                 <div className="absolute left-2 top-6 w-4 h-4 bg-[#00ff41] rounded-full shadow-[0_0_10px_#00ff41] hidden md:block"></div>
 
-                <div className="bg-[#0a1a0e]/70 border border-green-500/20 backdrop-blur-sm rounded-2xl p-6 md:ml-12 hover:border-green-400 hover:shadow-lg hover:translate-x-1 hover:translate-y-1 transition-all duration-200">
+                <div className="bg-[#0a1a0e]/70 border overflow-hidden border-green-500/20 backdrop-blur-sm rounded-2xl p-6 md:ml-12 hover:border-green-400 hover:shadow-lg hover:translate-x-1 hover:translate-y-1 transition-all duration-200">
                   {/* Project Image */}
                   <img
                     src={project.image || "/placeholder.svg"}
@@ -108,9 +112,9 @@ export function ProjectsSection() {
                       className="flex items-center gap-2 px-3 py-1 border border-[#00ff41] text-[#00ff41] font-mono text-sm rounded-md hover:bg-[#00ff41] hover:text-black transition"
                     >
                       <Github className="h-4 w-4" />
-                      CODE
+                      Github
                     </a>
-                    <a
+                    {/* <a
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -118,7 +122,7 @@ export function ProjectsSection() {
                     >
                       <ExternalLink className="h-4 w-4" />
                       DEMO
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>

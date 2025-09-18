@@ -9,6 +9,7 @@ import { SkillsSection } from "./components/skillsSection";
 import { ExperienceSection } from "./components/experienceSection";
 import { ContactSection } from "./components/contactSection";
 import { CertificationsSection } from "./components/certSection";
+import { EducationSection } from "./components/educationSection";
 // import { MatrixBackground } from "./components/matrixBackground";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <EducationSection/>
       <ProjectsSection />
       <SkillsSection />
       <ExperienceSection />
