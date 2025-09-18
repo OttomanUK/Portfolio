@@ -1,7 +1,7 @@
 "use client";
 
 import { Github, Linkedin, Mail } from "lucide-react";
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 export function HeroSection() {
   const [displayText, setDisplayText] = useState("");
@@ -32,7 +32,7 @@ export function HeroSection() {
         {Array.from({ length: 50 }).map((_, i) => (
           <div
             key={i}
-            className="absolute text-primary font-mono text-sm matrix-rain"
+            className="absolute text-green-400 font-mono text-sm matrix-rain"
             style={{
               left: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 3}s`,
@@ -47,9 +47,10 @@ export function HeroSection() {
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Loading box */}
-          <div className="mb-8">
-            <div className="w-32 h-32 mx-auto bg-card matrix-border matrix-glow relative font-mono text-xs flex items-center justify-center">
-              <div className="text-primary matrix-flicker">
+          <div className="mb-8 relative group">
+            <div className="w-32 h-32 mx-auto bg-card border border-green-500/30 rounded-md relative font-mono text-xs flex items-center justify-center overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/15 to-transparent -translate-x-full group-hover:translate-x-0 transition-transform duration-1000" />
+              <div className="text-green-400 matrix-flicker z-10">
                 {">"} LOADING...
                 <br />
                 {">"} USER_FOUND
@@ -60,16 +61,16 @@ export function HeroSection() {
           </div>
 
           {/* Heading */}
-          <h1 className="text-6xl md:text-8xl font-bold font-mono mb-4 text-primary matrix-glow matrix-text">
+          <h1 className="text-6xl md:text-8xl font-bold font-mono mb-4 text-green-400 matrix-glow">
             USMAN KHALID
           </h1>
 
-          <div className="text-xl md:text-2xl font-mono mb-6 text-accent matrix-flicker slide-in-right ">
+          <div className="text-xl md:text-2xl font-mono mb-6 text-green-300 matrix-flicker slide-in-right">
             {">"} {displayText}
-            <span className="animate-pulse">|</span>
+            <span className="text-green-400 animate-pulse">|</span>
           </div>
 
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-balance text-muted-foreground">
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-green-300/80 font-mono leading-relaxed">
             Fresh graduate passionate about creating innovative solutions
             through code. Ready to level up your team with modern web
             technologies and creative problem-solving.
@@ -79,13 +80,13 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <button
               onClick={() => scrollToSection("projects")}
-              className="font-mono text-lg px-8 py-3 bg-primary text-primary-foreground matrix-shadow matrix-border transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+              className="font-mono text-lg px-8 py-3 bg-green-500 text-black border border-green-400 shadow-md transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
             >
               {">"} VIEW_PROJECTS
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="font-mono text-lg px-8 py-3 border-2 border-primary matrix-border matrix-shadow transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+              className="font-mono text-lg px-8 py-3 border-2 border-green-500 text-green-400 transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
             >
               {">"} CONTACT_ME
             </button>
@@ -97,7 +98,7 @@ export function HeroSection() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 hover:text-accent matrix-glow"
+              className="p-2 hover:text-green-400"
             >
               <Github className="h-6 w-6" />
             </a>
@@ -105,13 +106,13 @@ export function HeroSection() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 hover:text-accent matrix-glow"
+              className="p-2 hover:text-green-400"
             >
               <Linkedin className="h-6 w-6" />
             </a>
             <a
               href="mailto:alex@example.com"
-              className="p-2 hover:text-accent matrix-glow"
+              className="p-2 hover:text-green-400"
             >
               <Mail className="h-6 w-6" />
             </a>

@@ -11,13 +11,13 @@ const experiences = [
       "Delivered client demos and managed sprint activities — boosted satisfaction by 20%.",
     ],
   },
-]
+];
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-20 bg-secondary">
+    <section id="experience" className="py-20 bg-[#000900]">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold font-mono text-center mb-12 text-primary">
+        <h2 className="text-4xl md:text-5xl font-bold font-mono text-center mb-12 text-[#00ff41]">
           {"› EXPERIENCE_LOG"}
         </h2>
 
@@ -26,38 +26,34 @@ export function ExperienceSection() {
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className="pixel-border retro-shadow bg-card rounded-2xl p-6"
+                className="relative bg-[#0a1a0e]/70 border border-green-500/20 rounded-2xl p-6 hover:border-green-400 hover:shadow-[0_0_15px_#00ff41] transition-all duration-300"
               >
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold font-mono text-primary mb-1">
+                    <h3 className="text-xl font-bold font-mono text-[#00ff41] mb-1">
                       {exp.title}
                     </h3>
-                    <p className="text-accent font-mono">{exp.company}</p>
+                    <p className="text-green-300 font-mono">{exp.company}</p>
                   </div>
-                  <div className="text-muted font-mono text-sm mt-2 md:mt-0">
+                  <div className="text-green-300 font-mono text-sm mt-2 md:mt-0 border border-green-500/20 px-2 py-1 rounded-md">
                     {exp.period}
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  {exp.description}
-                </p>
+                <p className="text-green-300 mb-4 leading-relaxed">{exp.description}</p>
 
                 {/* Achievements */}
                 <div>
-                  <h4 className="font-mono text-sm text-accent mb-2">
-                    ACHIEVEMENTS:
-                  </h4>
+                  <h4 className="font-mono text-sm text-[#00ff41] mb-2">ACHIEVEMENTS:</h4>
                   <ul className="space-y-1">
                     {exp.achievements.map((achievement, achIndex) => (
                       <li
                         key={achIndex}
-                        className="text-sm text-muted-foreground flex items-start"
+                        className="text-green-300 text-sm flex items-start"
                       >
-                        <span className="text-primary mr-2 font-mono">›</span>
+                        <span className="text-[#00ff41] mr-2 font-mono">›</span>
                         {achievement}
                       </li>
                     ))}
@@ -69,5 +65,6 @@ export function ExperienceSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
+

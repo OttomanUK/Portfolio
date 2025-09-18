@@ -8,6 +8,7 @@ import { ProjectsSection } from "./components/projectSection";
 import { SkillsSection } from "./components/skillsSection";
 import { ExperienceSection } from "./components/experienceSection";
 import { ContactSection } from "./components/contactSection";
+import { CertificationsSection } from "./components/certSection";
 // import { MatrixBackground } from "./components/matrixBackground";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <ProjectsSection />
       <SkillsSection />
       <ExperienceSection />
+      <CertificationsSection/>
       <ContactSection />
     </>
   );

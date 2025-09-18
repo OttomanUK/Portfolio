@@ -1,3 +1,5 @@
+"use client";
+
 import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
@@ -23,7 +25,14 @@ const projects = [
     title: "Personal Finance Tracker",
     description:
       "Finance tracking application built with PostgreSQL, Node.js, Express, and React, featuring secure authentication, analytics dashboards, and optimized queries for real-time insights.",
-    tech: ["React", "PostgreSQL", "Node", "Express", "TaildwindCSS", "ShadCN UI"],
+    tech: [
+      "React",
+      "PostgreSQL",
+      "Node",
+      "Express",
+      "TailwindCSS",
+      "ShadCN UI",
+    ],
     image: "/weather-api-dashboard.jpg",
     github: "https://github.com",
     demo: "https://demo.com",
@@ -32,7 +41,7 @@ const projects = [
     title: "E-Commerce Store",
     description:
       "E-commerce platform built with MERN, TailwindCSS, and ShadCN UI, supporting vendor/customer roles, catalog and cart workflows, and secure authentication with file uploads.",
-    tech: ["MERN", "TailwindCSS", "ShadCN UI"],
+    tech: ["MERN", "Tailwind CSS", "ShadCN UI"],
     image: "/fitness-app-interface.png",
     github: "https://github.com",
     demo: "https://demo.com",
@@ -41,70 +50,80 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 bg-secondary">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold font-mono text-center mb-12 text-primary">
+    <section
+      id="projects"
+      className="py-20 relative overflow-hidden bg-[#000900]" // dark background
+    >
+      <div className="container mx-auto px-4 relative">
+        <h2 className="text-4xl md:text-5xl font-bold font-mono text-center mb-12 text-[#00ff41]">
           {"> PROJECTS"}
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="pixel-border retro-shadow bg-card rounded-2xl p-6 hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200"
-            >
-              {/* Project Image */}
-              <img
-                src={project.image || "/placeholder.svg"}
-                alt={project.title}
-                className="w-full h-48 object-cover pixel-border mb-4 rounded-lg"
-              />
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical glowing line */}
+          <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-[#00ff41] shadow-[0_0_10px_#00ff41] hidden md:block"></div>
 
-              {/* Project Title */}
-              <h3 className="font-mono text-xl text-primary mb-2">
-                {project.title}
-              </h3>
+          <div className="space-y-12">
+            {projects.map((project, index) => (
+              <div key={index} className="relative">
+                {/* Dot marker for each project */}
+                <div className="absolute left-2 top-6 w-4 h-4 bg-[#00ff41] rounded-full shadow-[0_0_10px_#00ff41] hidden md:block"></div>
 
-              {/* Project Description */}
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                {project.description}
-              </p>
+                <div className="bg-[#0a1a0e]/70 border border-green-500/20 backdrop-blur-sm rounded-2xl p-6 md:ml-12 hover:border-green-400 hover:shadow-lg hover:translate-x-1 hover:translate-y-1 transition-all duration-200">
+                  {/* Project Image */}
+                  <img
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    className="w-full h-48 object-cover rounded-lg mb-4 border border-green-500/20"
+                  />
 
-              {/* Tech Stack */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tech.map((tech, techIndex) => (
-                  <span
-                    key={techIndex}
-                    className="px-2 py-1 bg-accent text-accent-foreground text-xs font-mono pixel-border"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                  {/* Project Title */}
+                  <h3 className="font-mono text-xl text-[#00ff41] mb-2">
+                    {project.title}
+                  </h3>
+
+                  {/* Project Description */}
+                  <p className="text-green-300 mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-2 py-1 bg-[#00ff41] text-black text-xs font-mono rounded-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-2">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-1 border border-[#00ff41] text-[#00ff41] font-mono text-sm rounded-md hover:bg-[#00ff41] hover:text-black transition"
+                    >
+                      <Github className="h-4 w-4" />
+                      CODE
+                    </a>
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-1 bg-[#00ff41] text-black font-mono text-sm rounded-md hover:bg-[#00cc33] transition"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      DEMO
+                    </a>
+                  </div>
+                </div>
               </div>
-
-              {/* Action Buttons */}
-              <div className="flex gap-2">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3 py-1 border border-primary text-primary font-mono text-sm rounded-md hover:bg-primary hover:text-background transition"
-                >
-                  <Github className="h-4 w-4" />
-                  CODE
-                </a>
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3 py-1 bg-primary text-background font-mono text-sm rounded-md hover:bg-primary/90 transition"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  DEMO
-                </a>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
