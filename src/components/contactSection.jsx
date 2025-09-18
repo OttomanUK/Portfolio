@@ -79,7 +79,6 @@ export function ContactSection() {
             <form
               name="contact"
               method="POST"
-              action="/success"
               className="space-y-4"
             >
               {/* Required for Netlify */}
